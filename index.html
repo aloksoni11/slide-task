@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title> Slider </title>
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <link rel="stylesheet" href="css/style.css" /> </head>
+
+<body>
+    <div class="container">
+        <div class="row no-gutters m-0 p-0">
+            <div class="col-md-4" id="first"> </div>
+            <div class="col-md-4" id="second"></div>
+            <div class="col-md-4" id="third"></div>
+        </div>
+    </div>
+</body>
+<script>
+    var i = 0;
+
+    function slider() {
+        myArray = ["1", "2", "3", "4", "5"];
+        //        var i = parseInt(Math.random() * (8));
+        //        console.log(i);
+        //        i = 0;
+        var x = document.getElementById("first");
+        var sec = document.getElementById("second");
+        var third = document.getElementById("third");
+        i++;
+        x.innerHTML = "<img src='../images/" + i + ".jpg' class='w-100 img'>";
+        sec.innerHTML = "<img src='../images/" + (i + 1) + ".jpg' class='w-100 img'>";
+        third.innerHTML = "<img src='../images/" + (i + 2) + ".jpg' class='w-100 img'>";
+        //        for (var i = 0; i < myArray.length; i++) {
+        // x.style.backgroundImage = "url(../images/" + i + ".jpg)"; // sec.style.backgroundImage = "url(../images/" + (i + 1) + ".jpg)"; // third.style.backgroundImage = "url(../images/" + (i + 2) + ".jpg)";
+        if (i == 3) {
+            i = 0;
+        }
+    }
+    window.setInterval(slider, 1000);
+</script>
+
+</html>

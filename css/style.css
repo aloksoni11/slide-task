@@ -1,0 +1,39 @@
+body {
+    /*    background-color: rgb(13, 197, 160);*/
+}
+
+#first {
+    height: 400px;
+    /*    width: 100%;*/
+    background-position: center;
+    background-size: cover;
+    opacity: 0.8;
+    /*    background-color: white;*/
+}
+
+#second {
+    height: 400px;
+    /*    width: 100%;*/
+    background-position: center;
+    background-color: white;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-image: url(../images/mac.png);
+}
+
+#third {
+    height: 400px;
+    /*    width: 100%;*/
+    background-position: center;
+    background-size: cover;
+    opacity: 0.8;
+    /*    background-color: white;*/
+}
+
+.img {
+    transition: all;
+    transition-duration: .2s;
+    height: 50%;
+    width: 20%;
+    animation-direction: alternate-reverse;
+}

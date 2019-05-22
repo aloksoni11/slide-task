@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title> Slide </title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <style>
+        html,
+        body {
+            margin: 0;
+            overflow: hidden;
+            padding: 0;
+        }
+        
+        .slide {
+            width: 367px;
+            background-color: orange;
+            height: 244px;
+            float: left;
+        }
+        
+        .container-fluid {
+            margin-left: 129px;
+            margin-right: 129px;
+            transition: all;
+            transition-delay: 0.5s;
+            transition-duration: 300ms;
+        }
+        
+        .pc {
+            position: fixed;
+            height: 320px;
+            width: 480px;
+            margin: auto;
+            left: 0;
+            right: 0;
+/*            z-index: ;*/
+        }
+        
+        .pre {
+            position: fixed;
+            background-color: white;
+            width: 440px;
+            height: 270px;
+            margin: auto;
+            left: 46px;
+            z-index: 2;
+            opacity: 0.8;
+        }
+        
+        .next {
+            position: fixed;
+            background-color: white;
+            width: 440px;
+            height: 270px;
+            margin: auto;
+            right: 46px    ;
+            opacity: 0.8;
+            z-index: 2;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="pre"></div> <img src="images/mac.png" alt="" class="pc">
+    <div class="next"></div>
+    <div class="" style="width: 300%;margin-left:129px; margin-right: 129px; margin-top: 20px;" id="container">
+        <div class="slide"> <img src="images/1.jpg" class="w-100" alt=""> </div>
+        <div class="slide"> <img src="images/2.jpg" class="w-100" alt=""></div>
+        <div class="slide"><img src="images/3.jpg" class="w-100" alt=""></div>
+        <div class="slide"><img src="images/4.jpg" class="w-100" alt=""></div>
+        <div class="slide"><img src="images/5.jpg" class="w-100" alt=""></div>
+        <div class="slide"><img src="images/6.jpg" class="w-100" alt=""></div>
+    </div>
+</body>
+<script>
+    var sum = 0;
+
+    function Frame() {
+        sum = sum + 367;
+        var con = document.getElementById("container");
+        con.style.transform = "translate3d(-" + sum + "px, 0, 0)";
+    }
+    window.setInterval(Frame, 1000);
+</script>
+
+</html>
