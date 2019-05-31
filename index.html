@@ -5,41 +5,89 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title> Slider </title>
-    <link rel="stylesheet" href="css/bootstrap.min.css" />
-    <link rel="stylesheet" href="css/style.css" /> </head>
+    <title> Slide </title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <style>
+        html,
+        body {
+            margin: 0;
+            overflow: hidden;
+            padding: 0;
+        }
+        
+        .slide {
+            width: 367px;
+            height: 244px;
+            float: left;
+        }
+        
+        .container-fluid {
+            margin-left: 129px;
+            margin-right: 129px;
+            transition: all;
+            transition-delay: 0.5s;
+            transition-duration: 300ms;
+        }
+        
+        .pc {
+            position: fixed;
+            height: 320px;
+            width: 480px;
+            margin: auto;
+            left: 0;
+            right: 0;
+            /*            z-index: ;*/
+        }
+        
+        .pre {
+            position: fixed;
+            background-color: white;
+            width: 440px;
+            height: 270px;
+            margin: auto;
+            left: 46px;
+            z-index: 2;
+            opacity: 0.8;
+        }
+        
+        .next {
+            position: fixed;
+            background-color: white;
+            width: 440px;
+            height: 270px;
+            margin: auto;
+            right: 46px;
+            opacity: 0.8;
+            z-index: 2;
+        }
+    </style>
+</head>
 
 <body>
-    <div class="container">
-        <div class="row no-gutters m-0 p-0">
-            <div class="col-md-4" id="first"> </div>
-            <div class="col-md-4" id="second"></div>
-            <div class="col-md-4" id="third"></div>
-        </div>
+    <div class="pre"></div> <img src="images/mac.png" alt="" class="pc">
+    <div class="next"></div>
+    <div class="" style="width: 300%;margin-left:129px; margin-right: 129px; margin-top: 20px;" id="container">
+        <div class="slide"> <img src="images/1.jpg" class="w-100 h-100" alt=""> </div>
+        <div class="slide"> <img src="images/2.jpg" class="w-100 h-100" alt=""></div>
+        <div class="slide"><img src="images/3.jpg" class="w-100 h-100" alt=""></div>
+        <div class="slide"><img src="images/4.jpg" class="w-100 h-100" alt=""></div>
+        <div class="slide"><img src="images/5.jpg" class="w-100 h-100" alt=""></div>
+        <div class="slide"><img src="images/6.jpg" class="w-100 h-100" alt=""></div>
+        <div class="slide"><img src="images/7.jpg" class="w-100 h-100" alt=""></div>
+        <div class="slide"><img src="images/8.jpg" class="w-100 h-100" alt=""></div>
+        <div class="slide"><img src="images/9.jpg" class="w-100 h-100" alt=""></div>
+        <div class="slide"><img src="images/10.jpg" class="w-100 h-100" alt=""></div>
     </div>
 </body>
 <script>
-    var i = 0;
+    var sum = 0;
 
-    function slider() {
-        myArray = ["1", "2", "3", "4", "5"];
-        //        var i = parseInt(Math.random() * (8));
-        //        console.log(i);
-        //        i = 0;
-        var x = document.getElementById("first");
-        var sec = document.getElementById("second");
-        var third = document.getElementById("third");
-        i++;
-        x.innerHTML = "<img src='../images/" + i + ".jpg' class='w-100 img'>";
-        sec.innerHTML = "<img src='../images/" + (i + 1) + ".jpg' class='w-100 img'>";
-        third.innerHTML = "<img src='../images/" + (i + 2) + ".jpg' class='w-100 img'>";
-        //        for (var i = 0; i < myArray.length; i++) {
-        // x.style.backgroundImage = "url(../images/" + i + ".jpg)"; // sec.style.backgroundImage = "url(../images/" + (i + 1) + ".jpg)"; // third.style.backgroundImage = "url(../images/" + (i + 2) + ".jpg)";
-        if (i == 3) {
-            i = 0;
-        }
+    function Frame() {
+        sum = sum + 367;
+        var con = document.getElementById("container");
+        con.style.transform = "translate3d(-" + sum + "px, 0, 0)";
     }
-    window.setInterval(slider, 1000);
+    window.setInterval(Frame, 1000);
 </script>
 
 </html>
